@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
-    path('',views.demo),
+    path('image/',views.image),
+    path('image/<int:id>/',views.image),
 ]
