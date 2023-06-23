@@ -50,6 +50,11 @@ INSTALLED_APPS = [
 CORS_ORIGIN_ALLOW_ALL =True
 CORS_ALLOW_ALL_HEADERS=True
 
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -86,13 +91,13 @@ WSGI_APPLICATION = 'e_nursery.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-#  'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'e_nursery',
-#         'USER':'root',
-#         'PASSWORD':'root',
-#         'HOST':'localhost',
-#     }
+ 'default': {
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'e_nursery',
+        'USER':'root',
+        'PASSWORD':'root',
+        'HOST':'localhost',
+    }
 }
 
 
