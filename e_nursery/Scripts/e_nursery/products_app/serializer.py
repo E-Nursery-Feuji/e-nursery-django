@@ -61,3 +61,41 @@ class ProductSerializer(serializers.ModelSerializer):
         instance.save()
 
         return instance
+    
+
+class BlogSerializer(serializers.ModelSerializer):
+
+    image = ImageSerializer(read_only=False)
+
+    class Meta:
+        model = Blog
+        fields = '__all__'
+
+    def create(self, validated_data):
+        image_data = validated_data.pop('image')
+        
+     
+        image = Image.objects.create(**image_data)
+     
+
+        blog = Blog.objects.create(image=image,  **validated_data)
+        return blog
+    
+    def update(self, instance, validated_data):
+        image_data = validated_data.pop('image', None)
+
+        if image_data:
+            image_serializer = ImageSerializer(instance.image, data=image_data)
+            if image_serializer.is_valid():
+                image_serializer.save()
+            else:
+                raise serializers.ValidationError(image_serializer.errors)
+
+
+        instance.title = validated_data.get('title', instance.title)
+        instance.description = validated_data.get('description', instance.description)
+        instance.uploaded_by = validated_data.get('uploaded_by', instance.uploaded_by)
+        instance.status = validated_data.get('status', instance.status)
+        instance.save()
+
+        return instance
