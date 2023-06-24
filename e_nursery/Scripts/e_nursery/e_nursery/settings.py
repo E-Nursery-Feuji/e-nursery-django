@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'e_nursery.wsgi.application'
 
 DATABASES = {
  'default': {
-        'ENGINE': 'mysql.connector.django',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'e_nursery',
         'USER':'root',
         'PASSWORD':'root',
