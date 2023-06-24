@@ -9,4 +9,7 @@ urlpatterns = [
     path('type/<int:id>/',views.type),
     path('product/',views.product),
     path('product/<int:id>/',views.product),
+    path('blogs/',views.blog),
+    path('blogs/<int:id>/',views.blog),
+   
 ]

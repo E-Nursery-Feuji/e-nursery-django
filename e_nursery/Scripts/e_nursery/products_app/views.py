@@ -5,6 +5,7 @@ from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser
 from .models import *
 from .serializer import *
+from .serializer import BlogSerializer
 import logging
 # Create your views here.
 
@@ -116,7 +117,47 @@ def product(request,id=0):
     
     elif request.method == 'DELETE':
         product = Product.objects.get(id=id)
-        image = product.image  # Retrieve the image associated with the product
-        product.delete()  # Delete the product
-        image.delete()  # Delete the associated image
+        image = product.image 
+        product.delete()  
+        image.delete()  
         return JsonResponse("Deleted successfully", safe=False)
+
+
+
+@csrf_exempt
+def blog(request,id=0):
+    if request.method=='GET':
+        logging.info("GET method")
+        if id==0:
+           blogs=Blog.objects.all()
+           blogs_serializer=BlogSerializer(blogs,many=True)
+           logging.info("getting all blogs")
+        else:
+            blog=Blog.objects.get(id=id)
+            logging.info("getting blog by id ")
+            blogs_serializer=BlogSerializer(blog)
+        return JsonResponse(blogs_serializer.data,safe=False) 
+       
+    elif request.method=='POST':   
+        blog_data = JSONParser().parse(request)
+        blog_serializer=BlogSerializer(data=blog_data)
+        if blog_serializer.is_valid():
+            blog_serializer.save()
+            return JsonResponse("Saved successfully...",safe=False)
+        return JsonResponse(blog_serializer.error_messages,safe=False)
+    
+    elif request.method=='PUT':
+        blog_data=JSONParser().parse(request)
+        blog=Blog.objects.get(id=blog_data['id'])
+        blog_serializer=BlogSerializer(blog,data=blog_data)
+        if blog_serializer.is_valid():
+            blog_serializer.save()
+            return JsonResponse("UPDATED successfully...",safe=False)
+        return JsonResponse("failed to update..",safe=False)
+    elif request.method=='DELETE':
+        blog=Blog.objects.get(id=id)
+        image = blog.image 
+        blog.delete()  
+        image.delete() 
+        return JsonResponse("deleted successfully",safe=False)
+    
