@@ -1,7 +1,7 @@
 from django.db import models
 
 class Image(models.Model):
-    id = models.AutoField(auto_created=True,primary_key=True,default=2)
+    id = models.AutoField(primary_key=True)
     image = models.CharField(max_length=300)
     class Meta:
         db_table = 'image'
@@ -17,18 +17,15 @@ class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=60)
     description = models.TextField(max_length=300)
-    price = models.IntegerField()
-    discount = models.IntegerField()
-    quantity = models.IntegerField()
-    image = models.OneToOneField(Image, on_delete=models.SET_DEFAULT, default=1)
-    type_id = models.ForeignKey(Type, on_delete=models.SET_DEFAULT, default=1)
+    price = models.FloatField()
+    discount = models.FloatField()
+    quantity = models.FloatField()
+    image = models.OneToOneField(Image, on_delete=models.CASCADE) 
+    type = models.ForeignKey(Type, on_delete=models.SET_DEFAULT, default=1)
 
     class Meta:
         db_table = "product"
 
 
 
-# class Cart(models.Model):
-#     id=models.AutoField(primary_key=True)  
-#     quantity=models.IntegerField()
-#     customer_id=models.ForeignKey()   
+  

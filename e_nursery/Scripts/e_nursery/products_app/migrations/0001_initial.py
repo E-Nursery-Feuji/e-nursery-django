@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('price', models.IntegerField()),
                 ('discount', models.IntegerField()),
                 ('quantity', models.IntegerField()),
-                ('image_id', models.OneToOneField(default=1, on_delete=django.db.models.deletion.SET_DEFAULT, to='products_app.image')),
+                ('image_id', models.OneToOneField(default=1, on_delete=django.db.models.deletion.CASCADE, to='products_app.image')),
                 ('type_id', models.ForeignKey(default=1, on_delete=django.db.models.deletion.SET_DEFAULT, to='products_app.type')),
             ],
             options={
