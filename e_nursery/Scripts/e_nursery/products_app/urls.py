@@ -3,13 +3,31 @@ from . import views
 
 
 urlpatterns = [
-    path('image/',views.image),
-    path('image/<int:id>/',views.image),
-    path('type/',views.type),
-    path('type/<int:id>/',views.type),
-    path('product/',views.product),
-    path('product/<int:id>/',views.product),
-    path('blogs/',views.blog),
-    path('blogs/<int:id>/',views.blog),
-   
+    path('images/',views.getAllImages),
+    path('image/<int:id>/',views.getImageById),
+    path('saveimage/',views.saveImage),
+    path('updateimage/',views.updateImage),
+    path('deleteimage/<int:id>/',views.deleteImageById),
+
+    path('types/',views.getAllTypes),
+    path('type/<int:id>/',views.getTypeById),
+    path('savetype/',views.saveType),
+    path('updatetype/',views.updateType),
+    path('deletetype/<int:id>/',views.deleteType),
+
+
+
+    path('products/',views.getAllProducts),
+    path('product/<int:id>/',views.getProductById),
+    path('saveproduct/',views.saveProduct),
+    path('updateproduct/',views.updateProduct),
+    path('deleteproduct/<int:id>/',views.deleteProductById),
+
+
+    path('blogs/',views.getAllBlogs),
+    path('blog/<int:id>/',views.getBlogById),
+    path('saveblog/',views.saveBlog),
+    path('updateblog/',views.updateBlog),
+    path('deleteblog/<int:id>/',views.deleteBlog),
+
 ]

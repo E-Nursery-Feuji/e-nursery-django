@@ -17,5 +17,7 @@ class Payment(models.Model):
         db_table = 'payment'
 
 
-class Order(models.Model):
-    id = models.AutoField(primary_key=True)
+# class Order(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     customer=models.IntegerField()
+#     product=models.
