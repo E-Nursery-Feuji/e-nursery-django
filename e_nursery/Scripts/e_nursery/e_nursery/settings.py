@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +26,9 @@ SECRET_KEY = 'django-insecure-j%n3irt3!1c_4iibbhupnzhf#xt0l*!i^=yk2hptx9q$i_53td
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+#AUTHNETICATION MODEL
+AUTH_USER_MODEL = 'customer_app.Customer'
 
 ALLOWED_HOSTS = []
 
@@ -44,16 +49,14 @@ INSTALLED_APPS = [
     'authentication_app.apps.AuthenticationAppConfig',
     'orders_app.apps.OrdersAppConfig',
     'products_app.apps.ProductsAppConfig',
+   
     
 ]
 
-CORS_ORIGIN_ALLOW_ALL =True
-CORS_ALLOW_ALL_HEADERS=True
+CROSSHEADERS_ALLOWED_HEADERS = ['Authorization', 'Content-Type']
+CROSSHEADERS_ALLOWED_METHODS = ['GET', 'POST', 'PUT', 'DELETE']
 
-import os
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -64,6 +67,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 ROOT_URLCONF = 'e_nursery.urls'
@@ -87,8 +94,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'e_nursery.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
  'default': {
@@ -101,8 +106,6 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -120,8 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -130,6 +132,30 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+SECURE_REFERRER_POLICY = ''
+
+SECURE_REFERRER_POLICY = 'same-origin'
+
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with'
+]
+
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+       'http://localhost:3000',
+]
 
 
 # Static files (CSS, JavaScript, Images)

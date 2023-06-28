@@ -1,26 +1,27 @@
-from django.shortcuts import render
-# from django.http import HttpResponse
-# from rest_framework import generics
-from .models import *
-from .serializer import *
+from django.contrib.auth.hashers import make_password
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
+from .models import *
+from .serializer import *
 import logging as log
+import jwt
+from datetime import datetime, timedelta
+from django.contrib.auth.hashers import check_password
+from django.conf import settings
 
 #for the log level & file & formate
-log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s') 
+log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-# created by Priya Patel & Samundar Singh & Haritha 
-# Create your views here.
-
-# for save the customer
+#for registration of customer
 @api_view(['POST'])
-def saveCustomer(request):
-    log.info("saveCustomer funation is started")
-    serializer=CustomerModelSerializer(data=request.data) #serialize the data
-    if serializer.is_valid(): #checing data is valid or not
-        log.info("Data is Valid")
+def register_customer(request):
+    log.info("register_customer function started")
+    serilizer=CustomerSerializer(data=request.data)  #serializer the customer data
+    if serilizer.is_valid():  #checking the validation of serialized data
+        log.info("register_customer:data is valid")
         email=request.data.get('email') #get email from request data
         log.info("Checking Email exits")
         data_exist=Users.objects.filter(email=email).exists() #check email is present or not
@@ -29,36 +30,48 @@ def saveCustomer(request):
             return Response("present") #email present then reponse
         else:
             log.info("Email not exist")
-            serializer.save() #email is not present then save the data
-            log.info("Data is saved")
-            return Response(serializer.data) #after save the data the response
+            serilizer.save()  #save the data into databse
+            log.info("customer data is saved")
+            return Response(serilizer.data)  #return this response to frontend
     else:
-        log.error("Data is not valid")
-        return Response(serializer.errors) #if data is not valid then send errors
+        log.info("data is invalid")
+        return Response("present")
+    
 
-# for login user & admin
+#for login the customer
 @api_view(['POST'])
-def login(request):
-    log.info("login function started")
-    serializer=LoginSerializer(data=request.data)
-    if serializer.is_valid():
-        log.info("Data is Valid")
-        email=request.data.get('email') #get email from request data
-        password = request.data.get('password') # Get password from request data
-        log.info("Checking Email if exits")
-        user = Users.objects.filter(email=email).first() # Retrieve customer object based on email
-        if user: #checking the customer is present
-            log.info("Email exist")
-            if password==user.password: #checking password
-                log.info("Password is correct")
-                userJson=UserSerializer(user) #convert to json
-                return Response(userJson.data) #response if password is correct
-            else:
-                log.info("Password is incorrect")
-                return Response("Incorrect Password") #reponse if password incorrect
+def login_customer(request):
+    log.info("login_customer function started")
+    serializer = LoginSerializer(data=request.data)
+    email = request.data.get('email')
+    password = request.data.get('password')
+    user = Users.objects.filter(email=email).first() # Retrieve customer object based on email
+    if user:
+        log.info("Email exists")
+        if check_password(password, user.password): # Verifying password
+            log.info("Password is correct")
+            # Generate JWT token
+            token = generate_jwt_token(user.id)
+            # Include the token in the response
+            response_data = {
+                'user': UserSerializer(user).data,
+                'token': token
+            }
+            return Response(response_data)
         else:
-            log.info("Email does not exist")
-            return Response("Email not found") #email not present then reponse
+            log.info("Password is incorrect")
+            return Response("Incorrect Password")
     else:
-        log.info("Invalid data") #data is nvalid
-        return Response(serializer.errors) #reponse the errors
+        log.info("Email does not exist")
+        return Response("Email not found")
+    
+#for generating jwt token
+def generate_jwt_token(user_id):
+    # Define the token payload (claims)
+    payload = {
+        'user_id': user_id,
+        'exp': datetime.utcnow() + timedelta(days=7)  # Set token expiration to 7 days from now
+    }
+    # Generate the JWT token using the secret key from Django settings
+    token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
+    return token

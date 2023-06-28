@@ -6,6 +6,6 @@ from .views import *
 
 urlpatterns = [
     # path('',views.demo ),
-    path('save/',saveCustomer,name='savecustomer'),
-    path('signin/',login,name='login')
+    path('save/',register_customer,name='register_customer'),
+    path('signin/',login_customer,name='login_customer')
 ]
