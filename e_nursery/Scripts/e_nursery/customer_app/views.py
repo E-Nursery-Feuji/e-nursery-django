@@ -51,7 +51,7 @@ def login_customer(request):
         if check_password(password, user.password): # Verifying password
             log.info("Password is correct")
             # Generate JWT token
-            token = generate_jwt_token(user.id)
+            token = generate_jwt_token(user.email,user.role)
             # Include the token in the response
             response_data = {
                 'user': UserSerializer(user).data,
@@ -66,10 +66,11 @@ def login_customer(request):
         return Response("Email not found")
     
 #for generating jwt token
-def generate_jwt_token(user_id):
+def generate_jwt_token(email,role):
     # Define the token payload (claims)
     payload = {
-        'user_id': user_id,
+        'email': email,
+        'role':role,
         'exp': datetime.utcnow() + timedelta(days=7)  # Set token expiration to 7 days from now
     }
     # Generate the JWT token using the secret key from Django settings
