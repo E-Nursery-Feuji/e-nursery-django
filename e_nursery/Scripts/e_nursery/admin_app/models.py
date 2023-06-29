@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Admin(models.Model):
+
     id=models.AutoField(primary_key=True,auto_created=True)
     first_name=models.CharField(max_length=255)
     last_name=models.CharField(max_length=255)
@@ -14,3 +15,4 @@ class Admin(models.Model):
     class Meta:
         db_table = "admin"
         managed=False
+
