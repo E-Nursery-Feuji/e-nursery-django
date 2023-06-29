@@ -15,6 +15,7 @@ class Customer(models.Model):
     # for the database table
     class Meta:
         db_table = "customer"
+        managed=False
 
 #Model for Users
 class Users(models.Model):
@@ -25,7 +26,7 @@ class Users(models.Model):
     password=models.CharField(max_length=255)
     role=models.CharField(max_length=255)
 
-    # for the database table
+#     # for the database table
     class Meta:
         managed = False  # Set managed=False to indicate that this model is not managed by Django
         db_table = 'users'  # Set the name of the database view
