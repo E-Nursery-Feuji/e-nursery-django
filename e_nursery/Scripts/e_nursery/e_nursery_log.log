@@ -302,3 +302,5 @@ TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
 2023-06-29 14:59:31,804 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
 2023-06-29 14:59:35,202 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
 2023-06-29 14:59:38,104 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
+
+
