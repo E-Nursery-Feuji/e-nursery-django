@@ -304,3 +304,303 @@ TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
 2023-06-29 14:59:38,104 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
 
 
+2023-06-30 14:23:37,370 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\orders_app\models.py changed, reloading.
+2023-06-30 14:28:33,615 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:34:13,200 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\urls.py changed, reloading.
+2023-06-30 14:34:25,454 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:34:32,055 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:34:39,864 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:34:45,225 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:34:52,213 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:34:59,700 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:05,866 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:10,595 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:19,125 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:24,328 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:27,819 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:33,598 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:38,464 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:46,983 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:35:52,744 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:02,665 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:06,688 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:11,349 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:16,806 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:24,715 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:29,960 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:36:36,939 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:37:46,151 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:37:53,793 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:00,689 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:11,776 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:19,630 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:33,949 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:43,003 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:46,676 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:54,305 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:38:59,789 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:39:03,467 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:39:33,069 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:39:48,124 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:39:52,189 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:40:12,161 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:40:18,691 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:40:23,957 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:40:57,210 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:00,793 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:07,379 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:10,852 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:15,902 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:21,902 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:26,445 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:37,239 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:41,227 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:52,861 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:41:57,079 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:42:03,398 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:42:07,529 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:42:22,595 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:42:29,313 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:42:32,533 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:43:26,987 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\urls.py changed, reloading.
+2023-06-30 14:44:03,320 - INFO - forgot_password:starts
+2023-06-30 14:44:03,623 - INFO - Email Exist
+2023-06-30 14:44:03,623 - INFO - Email send function call
+2023-06-30 14:44:03,623 - INFO - Send_otp_via_mail:starts
+2023-06-30 14:44:03,623 - INFO - OTP genrated
+2023-06-30 14:44:03,624 - INFO - 391322
+2023-06-30 14:44:03,624 - INFO - 391322
+2023-06-30 14:44:06,930 - INFO - Email send
+2023-06-30 14:44:06,930 - INFO - email send function return otp
+2023-06-30 14:44:06,931 - INFO - 391322
+2023-06-30 14:44:47,704 - INFO - update_password:starts
+2023-06-30 14:44:47,801 - INFO - user exits
+2023-06-30 14:45:27,080 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:45:40,314 - INFO - update_password:starts
+2023-06-30 14:45:40,401 - INFO - user exits
+2023-06-30 14:50:11,693 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:20,228 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:25,406 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:32,885 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:37,581 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:45,741 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:51,683 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:50:56,425 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:51:18,213 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:51:45,866 - INFO - forgot_password:starts
+2023-06-30 14:51:46,012 - INFO - Email Exist
+2023-06-30 14:51:46,012 - INFO - Email send function call
+2023-06-30 14:51:46,012 - INFO - Send_otp_via_mail:starts
+2023-06-30 14:51:46,012 - INFO - OTP genrated
+2023-06-30 14:51:46,012 - INFO - 435039
+2023-06-30 14:51:46,012 - INFO - 435039
+2023-06-30 14:51:50,499 - INFO - Email send
+2023-06-30 14:51:50,499 - INFO - email send function return otp
+2023-06-30 14:51:50,499 - INFO - 435039
+2023-06-30 14:52:10,796 - INFO - update_password:starts
+2023-06-30 14:52:11,010 - INFO - user exits
+2023-06-30 14:52:21,453 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:52:25,240 - INFO - update_password:starts
+2023-06-30 14:52:25,263 - INFO - user exits
+2023-06-30 14:52:56,014 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:53:05,451 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:53:14,288 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:53:21,004 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:53:27,425 - INFO - update_password:starts
+2023-06-30 14:53:27,458 - INFO - user exits
+2023-06-30 14:56:39,343 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:56:50,129 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:56:55,711 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:57:01,106 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:57:05,595 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:57:10,778 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:57:25,671 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:57:45,947 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:58:30,562 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\serializer.py changed, reloading.
+2023-06-30 14:58:36,915 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\serializer.py changed, reloading.
+2023-06-30 14:58:58,262 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:59:04,715 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:59:16,125 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:59:29,115 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:59:39,305 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:59:43,824 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 14:59:50,067 - INFO - update_password:starts
+2023-06-30 14:59:51,225 - ERROR - Internal Server Error: /customer/updatepassword/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2023-06-30 15:00:34,291 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:00:40,405 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:00:49,087 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:00:55,197 - INFO - update_password:starts
+2023-06-30 15:00:55,274 - INFO - Call serializer
+2023-06-30 15:00:55,274 - INFO - Serilized the data
+2023-06-30 15:00:55,401 - ERROR - Internal Server Error: /customer/updatepassword/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2023-06-30 15:01:16,843 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:01:21,643 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:01:28,088 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:01:32,106 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:01:39,277 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:01:47,466 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:01:59,696 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:02:03,865 - INFO - update_password:starts
+2023-06-30 15:02:03,903 - INFO - Call serializer
+2023-06-30 15:02:03,904 - INFO - Serilized the data
+2023-06-30 15:02:03,904 - INFO - LoginSerializer(data={'password': 'Vm0xNFYyRXlUWGRPVm1oV1lrWndVMVl3Wkc5VU1XeFlZek5rVUZWVU1Eaz0=', 'confirmPassword': 'Vm0xNFYyRXlUWGRPVm1oV1lrWndVMVl3Wkc5VU1XeFlZek5rVUZWVU1Eaz0=', 'email': 'patelpiyu1523@gmail.com'}):
+    email = CharField(max_length=255, validators=[<UniqueValidator(queryset=Customer.objects.all())>])
+    password = CharField(max_length=255)
+2023-06-30 15:02:03,917 - INFO - Data is not valid
+2023-06-30 15:03:06,878 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:03:11,422 - INFO - update_password:starts
+2023-06-30 15:03:11,442 - INFO - Call serializer
+2023-06-30 15:03:11,443 - INFO - Serilized the data
+2023-06-30 15:03:11,570 - ERROR - Internal Server Error: /customer/updatepassword/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py", line 108, in update_password
+    log.info(serilizer.data)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+2023-06-30 15:04:06,301 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:04:17,600 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:04:26,883 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:04:53,966 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:04:59,689 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:11,778 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:23,502 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:29,323 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:33,878 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:39,437 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:46,067 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:05:54,933 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:06:05,921 - INFO - update_password:starts
+2023-06-30 15:06:06,827 - INFO - Encoded password saved
+2023-06-30 15:06:06,827 - INFO - pbkdf2_sha256$390000$4jSZ7xigvLuSHDbVfpVgoM$VQCY23+56/T4FdUi5nBTtpKutEZLnYjiEe+idjupr3w=
+2023-06-30 15:06:07,101 - INFO - Password changed
+2023-06-30 15:06:49,147 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:06:56,168 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:07:00,309 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:07:07,698 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:07:14,904 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:07:23,715 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:08:19,818 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:08:25,651 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:08:30,594 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:08:34,357 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:08:39,962 - INFO - G:\e-nursary\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-30 15:08:43,329 - INFO - update_password:starts
+2023-06-30 15:08:43,814 - INFO - Encoded password saved
+2023-06-30 15:08:43,864 - INFO - None
+2023-06-30 15:08:43,864 - INFO - Password changed
+2023-06-30 15:12:18,671 - INFO - forgot_password:starts
+2023-06-30 15:12:22,285 - INFO - Email Exist
+2023-06-30 15:12:22,285 - INFO - Email send function call
+2023-06-30 15:12:22,285 - INFO - Send_otp_via_mail:starts
+2023-06-30 15:12:22,362 - INFO - OTP genrated
+2023-06-30 15:12:22,362 - INFO - 490171
+2023-06-30 15:12:22,373 - INFO - 490171
+2023-06-30 15:12:26,878 - INFO - Email send
+2023-06-30 15:12:26,878 - INFO - email send function return otp
+2023-06-30 15:12:26,878 - INFO - 490171
+2023-06-30 15:12:53,036 - INFO - update_password:starts
+2023-06-30 15:12:53,629 - INFO - Encoded password saved
+2023-06-30 15:12:53,717 - INFO - None
+2023-06-30 15:12:53,718 - INFO - Password changed
+2023-06-30 15:13:08,722 - INFO - login_customer function started
+2023-06-30 15:13:08,823 - INFO - Email exists
+2023-06-30 15:13:09,327 - INFO - Password is correct
+2023-06-30 15:44:46,883 - INFO - login_customer function started
+2023-06-30 15:44:47,563 - INFO - Email exists
+2023-06-30 15:44:48,258 - INFO - Password is correct
+2023-06-30 15:52:28,652 - INFO - update_password:starts
+2023-06-30 15:52:31,701 - INFO - Encoded password saved
+2023-06-30 15:52:31,920 - INFO - None
+2023-06-30 15:52:31,920 - INFO - Password changed
+2023-06-30 16:06:58,819 - INFO - register_customer function started
+2023-06-30 16:06:59,454 - INFO - register_customer:data is valid
+2023-06-30 16:06:59,454 - INFO - Checking Email exits
+2023-06-30 16:06:59,501 - INFO - Email not exist
+2023-06-30 16:06:59,970 - INFO - customer data is saved
+2023-06-30 16:07:19,474 - INFO - login_customer function started
+2023-06-30 16:07:19,578 - INFO - Email exists
+2023-06-30 16:07:19,990 - INFO - Password is correct
+2023-06-30 16:07:47,636 - INFO - update_password:starts
+2023-06-30 16:07:48,050 - INFO - Encoded password saved
+2023-06-30 16:07:48,097 - INFO - None
+2023-06-30 16:07:48,097 - INFO - Password changed
+2023-06-30 16:08:16,195 - INFO - login_customer function started
+2023-06-30 16:08:16,263 - INFO - Email exists
+2023-06-30 16:08:16,803 - INFO - Password is correct
+2023-06-30 16:08:54,248 - INFO - forgot_password:starts
+2023-06-30 16:08:54,319 - INFO - Email Exist
+2023-06-30 16:08:54,319 - INFO - Email send function call
+2023-06-30 16:08:54,319 - INFO - Send_otp_via_mail:starts
+2023-06-30 16:08:54,319 - INFO - OTP genrated
+2023-06-30 16:08:54,319 - INFO - 805196
+2023-06-30 16:08:54,319 - INFO - 805196
+2023-06-30 16:09:01,702 - INFO - Email send
+2023-06-30 16:09:01,812 - INFO - email send function return otp
+2023-06-30 16:09:01,812 - INFO - 805196
+2023-06-30 16:09:57,970 - INFO - forgot_password:starts
+2023-06-30 16:09:58,037 - INFO - Email Exist
+2023-06-30 16:09:58,037 - INFO - Email send function call
+2023-06-30 16:09:58,037 - INFO - Send_otp_via_mail:starts
+2023-06-30 16:09:58,037 - INFO - OTP genrated
+2023-06-30 16:09:58,037 - INFO - 493995
+2023-06-30 16:09:58,037 - INFO - 493995
+2023-06-30 16:10:01,805 - INFO - Email send
+2023-06-30 16:10:01,805 - INFO - email send function return otp
+2023-06-30 16:10:01,805 - INFO - 493995
+2023-06-30 16:11:14,385 - INFO - update_password:starts
+2023-06-30 16:11:14,797 - INFO - Encoded password saved
+2023-06-30 16:11:14,812 - INFO - None
+2023-06-30 16:11:14,812 - INFO - Password changed
+2023-06-30 16:11:29,445 - INFO - login_customer function started
+2023-06-30 16:11:29,478 - INFO - Email exists
+2023-06-30 16:11:29,876 - INFO - Password is correct

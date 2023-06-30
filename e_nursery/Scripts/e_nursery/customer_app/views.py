@@ -6,7 +6,7 @@ from rest_framework import status
 from .models import *
 from .serializer import *
 import logging as log
-# import jwt
+import jwt
 from datetime import datetime, timedelta
 from django.contrib.auth.hashers import check_password
 from django.conf import settings
@@ -83,15 +83,31 @@ def generate_jwt_token(email,role,first_name):
 @api_view(['POST'])
 def forgot_password(request):
     log.info("forgot_password:starts")
-    email=request.data.get('email')
+    email=request.data.get('email') #get email from request
     user = Users.objects.filter(email=email).first()
     if user:
         log.info("Email Exist")
         log.info("Email send function call")
-        otp=send_opt_via_email(email)
+        otp=send_opt_via_email(email) #send the otp method
         log.info("email send function return otp")
         log.info(otp)
-        return Response(otp)
+        return Response(otp) #reponse as otp
     else:
         log.info("Email is not exist")
-        return Response("Email invalid")
+        return Response("Email invalid") #reponse if email is not present
+    
+@api_view(['POST'])
+def update_password(request):
+    log.info("update_password:starts")
+    email=request.data.get('email') #get email from the request
+    password=request.data.get('password') #get password form request
+    customer=Customer.objects.filter(email=email).first() #get the user based on email
+    customer.set_password(password) #password encodes
+    log.info("Encoded password saved")
+    h=customer.save() #updtae the customer
+    log.info(h)
+    log.info("Password changed")
+    return Response("Success") #reponse if password chnaged
+    
+
+
