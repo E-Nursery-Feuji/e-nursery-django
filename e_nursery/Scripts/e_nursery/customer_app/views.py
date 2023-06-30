@@ -2,11 +2,11 @@ from django.contrib.auth.hashers import make_password
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework_simplejwt.tokens import RefreshToken
+# from rest_framework_simplejwt.tokens import RefreshToken
 from .models import *
 from .serializer import *
 import logging as log
-import jwt
+# import jwt
 from datetime import datetime, timedelta
 from django.contrib.auth.hashers import check_password
 from django.conf import settings
