@@ -272,3 +272,33 @@ TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
 2023-06-28 17:18:26,564 - INFO - login_customer function started
 2023-06-28 17:18:26,611 - INFO - Email exists
 2023-06-28 17:18:26,998 - INFO - Password is correct
+2023-06-29 14:49:54,133 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:49:56,801 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:04,120 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:07,321 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:19,340 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:28,230 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:32,551 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:38,272 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:45,650 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:50:54,712 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\customer_app\views.py changed, reloading.
+2023-06-29 14:53:02,177 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\orders_app\serializer.py changed, reloading.
+2023-06-29 14:53:10,773 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\orders_app\serializer.py changed, reloading.
+2023-06-29 14:53:48,796 - WARNING - Not Found: /admin/admin
+2023-06-29 14:54:08,733 - WARNING - Not Found: /admin/admin
+2023-06-29 14:54:38,961 - WARNING - Not Found: /admin/admin/
+2023-06-29 14:55:17,739 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\e_nursery\settings.py changed, reloading.
+2023-06-29 14:55:56,895 - WARNING - Not Found: /admin/admin/
+2023-06-29 14:56:46,937 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\views.py changed, reloading.
+2023-06-29 14:56:53,158 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\admin_app\views.py changed, reloading.
+2023-06-29 14:57:04,010 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\admin_app\urls.py changed, reloading.
+2023-06-29 14:57:14,854 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\admin_app\serializer.py changed, reloading.
+2023-06-29 14:58:33,759 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\models.py changed, reloading.
+2023-06-29 14:58:36,776 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\models.py changed, reloading.
+2023-06-29 14:58:39,792 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\models.py changed, reloading.
+2023-06-29 14:58:46,132 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\models.py changed, reloading.
+2023-06-29 14:58:48,057 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\models.py changed, reloading.
+2023-06-29 14:59:21,263 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
+2023-06-29 14:59:31,804 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
+2023-06-29 14:59:35,202 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
+2023-06-29 14:59:38,104 - INFO - C:\e_nursery project\e-nursery-django\e_nursery\Scripts\e_nursery\authentication_app\urls.py changed, reloading.
