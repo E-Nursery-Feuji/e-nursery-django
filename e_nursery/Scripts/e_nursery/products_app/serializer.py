@@ -1,8 +1,10 @@
 
 from rest_framework import serializers
 from .models import *
-import logging
-logger=logging.getLogger(__name__)
+import logging as log
+
+#for the log level & file & formate
+log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,11 +28,11 @@ class ProductSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         image_data = validated_data.pop('image')
         type_data = validated_data.pop('type')
-     
-        image = Image.objects.create(**image_data)
+        image = Image.objects.filter(**image_data).last()
         type = Type.objects.filter(**type_data).first()
         if not type:
             type = Type.objects.create(**type_data)
+            image = Image.onjects.create(**image_data)
 
         product = Product.objects.create(image=image, type=type, **validated_data)
         return product
@@ -46,13 +48,14 @@ class ProductSerializer(serializers.ModelSerializer):
             else:
                 raise serializers.ValidationError(image_serializer.errors)
 
-        if type_data:
-            type_serializer = TypeSerializer(instance.type, data=type_data)
-            if type_serializer.is_valid():
-                type_serializer.save()
-            else:
-                raise serializers.ValidationError(type_serializer.errors)
+        # if type_data:
+        #     type_serializer = TypeSerializer(instance.type, data=type_data)
+        #     if type_serializer.is_valid():
+        #         type_serializer.save()
+        #     else:
+        #         raise serializers.ValidationError(type_serializer.errors)
 
+        instance.type =  Type.objects.filter(**type_data).first()
         instance.name = validated_data.get('name', instance.name)
         instance.description = validated_data.get('description', instance.description)
         instance.price = validated_data.get('price', instance.price)
