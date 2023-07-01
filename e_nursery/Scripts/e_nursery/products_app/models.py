@@ -2,7 +2,7 @@ from django.db import models
 
 class Image(models.Model):
     id = models.AutoField(primary_key=True)
-    image = models.CharField(max_length=300)
+    image = models.BinaryField()
     class Meta:
         db_table = 'image'
 

@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path('images/',views.getAllImages),
     path('image/<int:id>/',views.getImageById),
-    path('saveimage/',views.saveImage),
+     path('saveimage/', views.saveImage, name='save_image'),
     path('updateimage/',views.updateImage),
     path('deleteimage/<int:id>/',views.deleteImageById),
 

@@ -6,24 +6,28 @@ from rest_framework.parsers import JSONParser
 from .models import *
 from .serializer import *
 from .serializer import BlogSerializer
-import logging
+import logging as log
+from django.core.serializers import serialize
+from django.http import JsonResponse
 # Create your views here.
 
+#for the log level & file & formate
+log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 def demo(request):
     return HttpResponse('product app')
 
 @csrf_exempt    
 def getAllImages(request):
-        logging.info("GET method")
+        log.info("GET method")
         images=Image.objects.all()
         images_serializer=ImageSerializer(images,many=True)
-        logging.info("getting all images")
+        log.info("getting all images")
         return JsonResponse(images_serializer.data,safe=False)   
  
 @csrf_exempt 
 def getImageById(request,id):
         image=Image.objects.get(id=id)
-        logging.info("getting image by")
+        log.info("getting image by")
         images_serializer=ImageSerializer(image)
         return JsonResponse(images_serializer.data,safe=False) 
    
@@ -33,14 +37,25 @@ def deleteImageById(request,id):
      image.delete()
      return JsonResponse("deleted successfully",safe=False)
 
+#for save the image
 @csrf_exempt       
 def saveImage(request):
-     image_data = JSONParser().parse(request)
-     image_serializer=ImageSerializer(data=image_data)
-     if image_serializer.is_valid():
-           image_serializer.save()
-           return JsonResponse("Saved successfully...",safe=False)
-     return JsonResponse("failed to save..",safe=False)
+        log.info("saveImage : starts")
+        if 'image' in request.FILES: #check the image is present as file or not
+                log.info("Image Present in the request")
+                image_file = request.FILES['image'] #get the image from the request
+                log.info("Image is reading...")
+                image_data = image_file.read() #get the image data from the image
+                log.info("Image reading Completed")
+                image = Image() #create the object of the image model
+                image.image_data = image_data #assign the image data in the object
+                image.save() #save the image in database
+                log.info("Image saved")
+                serialized_image = serialize('json', [image])
+                return JsonResponse(serialized_image, safe=False)
+                # return HttpResponse(image) #response if image save succesfuuly
+        log.info("Image is not present in request")
+        return HttpResponse("Invalid request.") #reponse if image is not there in request
 
 
 @csrf_exempt 
@@ -78,7 +93,7 @@ def saveType(request):
         if type_serializer.is_valid():
             type_serializer.save()
             return JsonResponse("Saved successfully...",safe=False)
-        return JsonResponse("failed to save..",safe=False)
+        return JsonResponse("failed to save...",safe=False)
 
 @csrf_exempt 
 def updateType(request):   
@@ -105,10 +120,13 @@ def getProductById(request,id):
 def  saveProduct(request):   
         product_data = JSONParser().parse(request)
         product_serializer=ProductSerializer(data=product_data)
+        log.info("save product is executed")
         if product_serializer.is_valid():
                 product_serializer.save()
-                return JsonResponse("Saved successfully...",safe=False)
-        return JsonResponse(product_serializer.errors,safe=False)
+                return JsonResponse("product added",safe=False)
+        # else:
+        #         log.info("save product data ia not valid change")
+        return JsonResponse("not added",safe=False)
         
        
 @csrf_exempt    
@@ -116,10 +134,11 @@ def updateProduct(request):
         product_data=JSONParser().parse(request)       
         product=Product.objects.get(id=product_data['id'])
         product_serializer=ProductSerializer(product,data=product_data)
+        log.info("update product==")
         if product_serializer.is_valid():
             product_serializer.save()
-            return JsonResponse("UPDATED successfully...",safe=False)
-        return JsonResponse(product_serializer.errors,safe=False)
+            return JsonResponse("product updated",safe=False)
+        return JsonResponse("not updated",safe=False)
     
 @csrf_exempt    
 def deleteProductById(request,id):
@@ -127,7 +146,7 @@ def deleteProductById(request,id):
         image = product.image 
         product.delete()  
         image.delete()  
-        return JsonResponse("Deleted successfully", safe=False)
+        return JsonResponse("Deleted", safe=False)
 @csrf_exempt 
 def getAllBlogs(request):
         logging.info("GET method")

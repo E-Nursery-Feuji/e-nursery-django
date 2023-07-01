@@ -1,4 +1,5 @@
 
+
 from django.contrib.auth.hashers import make_password
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -12,7 +13,9 @@ from rest_framework import status
 log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-# Create your views here.
+#for the log level & file & formate
+log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s') 
+
 
 @api_view(['POST'])
 def registerAdmin(request):
@@ -23,11 +26,13 @@ def registerAdmin(request):
         email=request.data.get('email') #get email from request data
         log.info("Checking Email exits")
         data_exist=Admin.objects.filter(email=email).exists() #check email is present or not
+
         if data_exist:
             log.info("Email exist")
             return Response("present") #email present then reponse
         else:
             log.info("Email not exist")
+
             serilizer.save()  #save the data into databse
             log.info("customer data is saved")
             return Response(serilizer.data)  #return this response to frontend
@@ -60,4 +65,4 @@ def update(request, id):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     except Admin.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-  
+
