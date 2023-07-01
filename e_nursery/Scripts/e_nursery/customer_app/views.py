@@ -93,7 +93,10 @@ def forgot_password(request):
         otp=send_opt_via_email(email) #send the otp method
         log.info("email send function return otp")
         log.info(otp)
-        return Response(otp) #reponse as otp
+        if otp:
+            return Response(otp) #reponse as otp
+        else:
+            return Response('Something Went Wrong')
     else:
         log.info("Email is not exist")
         return Response("Email invalid") #reponse if email is not present
