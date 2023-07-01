@@ -10,6 +10,7 @@ import jwt
 from datetime import datetime, timedelta
 from django.contrib.auth.hashers import check_password
 from django.conf import settings
+from .email import *
 
 #for the log level & file & formate
 log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -51,7 +52,7 @@ def login_customer(request):
         if check_password(password, user.password): # Verifying password
             log.info("Password is correct")
             # Generate JWT token
-            token = generate_jwt_token(user.id)
+            token = generate_jwt_token(user.email,user.role,user.first_name)
             # Include the token in the response
             response_data = {
                 'user': UserSerializer(user).data,
@@ -66,12 +67,47 @@ def login_customer(request):
         return Response("Email not found")
     
 #for generating jwt token
-def generate_jwt_token(user_id):
+def generate_jwt_token(email,role,first_name):
     # Define the token payload (claims)
     payload = {
-        'user_id': user_id,
+        'email': email,
+        'role':role,
+        'first_name':first_name,
         'exp': datetime.utcnow() + timedelta(days=7)  # Set token expiration to 7 days from now
     }
     # Generate the JWT token using the secret key from Django settings
     token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
     return token
+
+# for forgotpassword
+@api_view(['POST'])
+def forgot_password(request):
+    log.info("forgot_password:starts")
+    email=request.data.get('email') #get email from request
+    user = Users.objects.filter(email=email).first()
+    if user:
+        log.info("Email Exist")
+        log.info("Email send function call")
+        otp=send_opt_via_email(email) #send the otp method
+        log.info("email send function return otp")
+        log.info(otp)
+        return Response(otp) #reponse as otp
+    else:
+        log.info("Email is not exist")
+        return Response("Email invalid") #reponse if email is not present
+    
+@api_view(['POST'])
+def update_password(request):
+    log.info("update_password:starts")
+    email=request.data.get('email') #get email from the request
+    password=request.data.get('password') #get password form request
+    customer=Customer.objects.filter(email=email).first() #get the user based on email
+    customer.set_password(password) #password encodes
+    log.info("Encoded password saved")
+    h=customer.save() #updtae the customer
+    log.info(h)
+    log.info("Password changed")
+    return Response("Success") #reponse if password chnaged
+    
+
+

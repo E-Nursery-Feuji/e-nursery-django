@@ -1,34 +1,68 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import *
-from .serializer import *
+
+
+from django.contrib.auth.hashers import make_password
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from .models import *
+from .serializer import *
 import logging as log
-from customer_app.models import Users
+from rest_framework import status
+
+
+#for the log level & file & formate
+log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 #for the log level & file & formate
 log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s') 
 
 
-# for save the admin
 @api_view(['POST'])
-def saveAdmin(request):
-    log.info("saveAdmin function is started")
-    serializer=AdminModelSerializer(data=request.data) #serialize the data
-    if serializer.is_valid(): #checing data is valid or not
-        log.info("Data is Valid")
+def registerAdmin(request):
+    log.info("register_customer function started")
+    serilizer=AdminModelSerializer(data=request.data)  #serializer the customer data
+    if serilizer.is_valid():  #checking the validation of serialized data
+        log.info("register_customer:data is valid")
         email=request.data.get('email') #get email from request data
         log.info("Checking Email exits")
-        data_exist=Users.objects.filter(email=email).exists() #check email is present or not
+        data_exist=Admin.objects.filter(email=email).exists() #check email is present or not
+
         if data_exist:
             log.info("Email exist")
             return Response("present") #email present then reponse
         else:
             log.info("Email not exist")
-            serializer.save() #email is not present then save the data
-            log.info("Data is saved")
-            return Response(serializer.data) #after save the data the response
+
+            serilizer.save()  #save the data into databse
+            log.info("customer data is saved")
+            return Response(serilizer.data)  #return this response to frontend
     else:
-        log.error("Data is not valid")
-        return Response(serializer.errors) #if data is not valid then send errors
+        log.info("data is invalid")
+        return Response("present")
+    
+@api_view(['GET'])
+def getAdmin(request, id=None):
+    if id is not None:
+        try:
+            
+            admin = Admin.objects.get(id=id)
+            serializer = AdminModelSerializer(admin)  
+            return Response(serializer.data)
+        except Admin.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    else:
+        qs = Admin.objects.all()
+        serializer = AdminModelSerializer(qs, many=True)
+        return Response(serializer.data)
+@api_view(['PUT'])
+def update(request, id):
+    try:
+        admin = Admin.objects.get(id=id)
+        serializer = AdminModelSerializer(admin, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except Admin.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
