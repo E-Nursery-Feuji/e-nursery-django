@@ -4032,3 +4032,4 @@ ValueError: Cannot assign "TypeSerializer(<Type: Type object (4)>, data=OrderedD
 2023-07-01 09:58:01,058 - INFO - getting all images
 2023-07-01 09:58:08,217 - INFO - GET method
 2023-07-01 09:58:08,221 - INFO - getting all images
+2023-07-01 10:35:48,479 - INFO - C:\Users\sures\OneDrive\Desktop\e-nursery-django\e_nursery\Scripts\e_nursery\products_app\views.py changed, reloading.

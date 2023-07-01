@@ -93,7 +93,7 @@ def saveType(request):
         if type_serializer.is_valid():
             type_serializer.save()
             return JsonResponse("Saved successfully...",safe=False)
-        return JsonResponse("failed to save..",safe=False)
+        return JsonResponse("failed to save...",safe=False)
 
 @csrf_exempt 
 def updateType(request):   
