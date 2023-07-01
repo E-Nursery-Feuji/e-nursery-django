@@ -26,6 +26,10 @@ class Customer(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['password']
 
+ # Add unique related_name for the conflicting fields
+Customer.groups.field.remote_field.related_name = 'customer_related_groups'
+Customer.user_permissions.field.remote_field.related_name = 'customer_related_user_permissions'
+
 #Model for Users
 class Users(models.Model):
     id=models.AutoField(primary_key=True,auto_created=True)

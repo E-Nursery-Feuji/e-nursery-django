@@ -48,7 +48,9 @@ def login_customer(request):
     password = request.data.get('password')
     user = Users.objects.filter(email=email).first() # Retrieve customer object based on email
     if user:
-        log.info("Email exists")
+        log.info("Email exists**********************************************")
+        log.error(password)
+        log.error(user.password)
         if check_password(password, user.password): # Verifying password
             log.info("Password is correct")
             # Generate JWT token

@@ -149,10 +149,10 @@ def deleteProductById(request,id):
         return JsonResponse("Deleted", safe=False)
 @csrf_exempt 
 def getAllBlogs(request):
-        logging.info("GET method")
+        log.info("GET method")
         blogs=Blog.objects.all()
         blogs_serializer=BlogSerializer(blogs,many=True)
-        logging.info("getting all blogs")
+        log.info("getting all blogs")
         return JsonResponse(blogs_serializer.data,safe=False) 
 
 
@@ -160,7 +160,7 @@ def getAllBlogs(request):
 @csrf_exempt
 def getBlogById(request,id):
             blog=Blog.objects.get(id=id)
-            logging.info("getting blog by id ")
+            log.info("getting blog by id ")
             blogs_serializer=BlogSerializer(blog)
  
             return JsonResponse(blogs_serializer.data,safe=False) 
