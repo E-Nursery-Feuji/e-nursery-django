@@ -49,3 +49,15 @@ def getAdmin(request, id=None):
         qs = Admin.objects.all()
         serializer = AdminModelSerializer(qs, many=True)
         return Response(serializer.data)
+@api_view(['PUT'])
+def update(request, id):
+    try:
+        admin = Admin.objects.get(id=id)
+        serializer = AdminModelSerializer(admin, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except Admin.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+  
