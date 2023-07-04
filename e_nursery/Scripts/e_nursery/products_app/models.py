@@ -1,8 +1,11 @@
 from django.db import models
 
+def upload_path(instance,filename):
+    return '/'.join(['images',str(instance.id),filename])
+
 class Image(models.Model):
     id = models.AutoField(primary_key=True)
-    image = models.BinaryField()
+    image = models.ImageField(blank=False,null=True,upload_to=upload_path)
     class Meta:
         db_table = 'image'
 
