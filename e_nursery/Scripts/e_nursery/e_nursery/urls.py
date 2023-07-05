@@ -1,5 +1,6 @@
 """e_nursery URL Configuration
 
+
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
@@ -13,6 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path,include
 
@@ -23,4 +26,4 @@ urlpatterns = [
     path('authentication/', include('authentication_app.urls')),
     path('products/', include('products_app.urls')),
     path('orders/', include('orders_app.urls')),
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
