@@ -1,4 +1,5 @@
 from django.contrib.auth.hashers import make_password
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -11,6 +12,7 @@ from datetime import datetime, timedelta
 from django.contrib.auth.hashers import check_password
 from django.conf import settings
 from .email import *
+from admin_app.models import Admin
 
 #for the log level & file & formate
 log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -101,18 +103,48 @@ def forgot_password(request):
         log.info("Email is not exist")
         return Response("Email invalid") #reponse if email is not present
     
+# @api_view(['POST'])
+# def update_password(request):
+#     log.info("update_password:starts")
+#     email=request.data.get('email') #get email from the request
+#     password=request.data.get('password') #get password form request
+#     customer=Customer.objects.filter(email=email).first() #get the user based on email
+#     customer.set_password(password) #password encodes
+#     log.info("Encoded password saved")
+#     h=customer.save() #updtae the customer
+#     log.info(h)
+#     log.info("Password changed")
+#     return Response("Success") #reponse if password chnaged
+    
+
+
+
 @api_view(['POST'])
 def update_password(request):
     log.info("update_password:starts")
-    email=request.data.get('email') #get email from the request
-    password=request.data.get('password') #get password form request
-    customer=Customer.objects.filter(email=email).first() #get the user based on email
-    customer.set_password(password) #password encodes
+    email = request.data.get('email')
+    password = request.data.get('password')
+    log.info(password)
+    user = Users.objects.get(email=email)
+    log.info(user)
+    role = user.role # Retrieve the user's role (assuming you have a 'role' field in the User model)
+    log.info(role)
+        # Perform any necessary operations based on the role
+    if role == 'ADMIN':
+        update=Admin.objects.filter(email=email).first() #get the user based on email
+        update.set_password(password)
+    
+    else:
+        update=Customer.objects.filter(email=email).first() #get the user based on email
+        update.set_password(password) #password encodes
     log.info("Encoded password saved")
-    h=customer.save() #updtae the customer
+    h=update.save() #updtae the customer
     log.info(h)
     log.info("Password changed")
-    return Response("Success") #reponse if password chnaged
-    
+    return Response("Success") #reponse if password chnaged   
+
+        
+
+
 
 
