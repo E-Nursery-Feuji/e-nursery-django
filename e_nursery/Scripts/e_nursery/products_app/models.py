@@ -23,8 +23,10 @@ class Product(models.Model):
     description = models.TextField(max_length=300)
     price = models.FloatField()
     discount = models.FloatField()
+
     quantity = models.FloatField()  
     image_id = models.IntegerField()
+
     type = models.ForeignKey(Type, on_delete=models.SET_DEFAULT, default=1)
     class Meta:
         db_table = "product"
