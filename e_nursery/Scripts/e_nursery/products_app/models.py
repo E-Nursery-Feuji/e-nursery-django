@@ -23,8 +23,9 @@ class Product(models.Model):
     price = models.FloatField()
     discount = models.FloatField()
     quantity = models.FloatField()
-    image_id = models.OneToOneField(Image, on_delete=models.CASCADE) 
-    type_id = models.ForeignKey(Type, on_delete=models.SET_DEFAULT, default=1)
+    #image = models.OneToOneField(Image, on_delete=models.CASCADE) 
+    image_id = models.IntegerField()
+    type = models.ForeignKey(Type, on_delete=models.SET_DEFAULT, default=1)
 
     class Meta:
         db_table = "product"

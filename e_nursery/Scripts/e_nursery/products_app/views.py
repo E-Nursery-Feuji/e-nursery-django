@@ -23,9 +23,14 @@ def demo(request):
 def getAllImages(request):
         log.info("GET method")
         images=Image.objects.all()
-        images_serializer=ImageSerializer(images,many=True)
+        serialized_images = []
+
+        for image in images:
+                image_serializer = ImageSerializer(image, context={'request': request})
+                serialized_images.append(image_serializer.data)
+
         log.info("getting all images")
-        return JsonResponse(images_serializer.data,safe=False)   
+        return JsonResponse(serialized_images,safe=False)   
  
 @csrf_exempt 
 def getImageById(request,id):
@@ -142,14 +147,15 @@ def getProductById(request,id):
       return JsonResponse(products_serializer.data,safe=False) 
 @csrf_exempt 
 def  saveProduct(request):   
-        product_data = JSONParser().parse(request)
+        
+        product_data = JSONParser().parse(request)       
         product_serializer=ProductSerializer(data=product_data)
         log.info("save product is executed")
         if product_serializer.is_valid():
                 product_serializer.save()
                 return JsonResponse("product added",safe=False)
-        # else:
-        #         log.info("save product data ia not valid change")
+        else:
+                log.info("save product data ia not valid change")
         return JsonResponse("not added",safe=False)
         
        
@@ -160,6 +166,7 @@ def updateProduct(request):
         product_serializer=ProductSerializer(product,data=product_data)
         log.info("update product==")
         if product_serializer.is_valid():
+            log.info("========")    
             product_serializer.save()
             return JsonResponse("product updated",safe=False)
         return JsonResponse("not updated",safe=False)
