@@ -53,15 +53,49 @@ def getAdmin(request, id=None):
         qs = Admin.objects.all()
         serializer = AdminModelSerializer(qs, many=True)
         return Response(serializer.data)
-@api_view(['PUT'])
+# @api_view(['PUT'])
+# def update(request, id):
+#     try:
+#         admin = Admin.objects.get(id=id)
+#         log.info(admin)
+#         serializer = AdminModelSerializer(admin, data=request.data)
+#         log.info(request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#     except Admin.DoesNotExist:
+#         return Response(status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PATCH'])
 def update(request, id):
+    log.info("Enter into insert Schedule")
     try:
-        admin = Admin.objects.get(id=id)
-        serializer = AdminModelSerializer(admin, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        schedule = Admin.objects.get(id=id)
     except Admin.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return Response({'error': 'Schedule not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Assign the field value "InActive" to the desired field
+   
+
+    
+
+    if (schedule.status == "Active"):
+        schedule.status = "InActive"
+    elif (schedule.status == "InActive"):
+        schedule.status = "Active"
+    else:
+        schedule.status = "Active"
+
+    # if(schedule.arrival_time)
+    try:
+        # Save the updated Schedule object
+        schedule.save()
+
+        # Return the serialized data in the response
+        serializer = AdminModelSerializer(schedule)
+        return Response(serializer.data)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
