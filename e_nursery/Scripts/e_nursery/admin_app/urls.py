@@ -4,6 +4,6 @@ urlpatterns = [
 
     path('saveadmin/',views.registerAdmin),
     path('admin/',views.getAdmin),
-    path('updateadmin/<int:id>/',views.update)
-
+    path('updateadmin/<int:id>/',views.update),
+    path('updatestatus/<int:id>/',views.status)
 ]
