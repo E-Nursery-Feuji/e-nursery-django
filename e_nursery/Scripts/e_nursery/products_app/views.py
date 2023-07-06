@@ -155,7 +155,7 @@ def  saveProduct(request):
         log.info("save product is executed")
         if product_serializer.is_valid():
                 product_serializer.save()
-                return JsonResponse("product added",safe=False)
+                return JsonResponse(product_serializer.data,safe=False)
         else:
                 log.info("save product data ia not valid change")
         return JsonResponse("not added",safe=False)
@@ -165,21 +165,24 @@ def  saveProduct(request):
 def updateProduct(request):
         product_data=JSONParser().parse(request)       
         product=Product.objects.get(id=product_data['id'])
+        log.info(product_data)
         product_serializer=ProductSerializer(product,data=product_data)
         log.info("update product==")
+        log.info(product_serializer)
         if product_serializer.is_valid():
-            log.info("========")    
             product_serializer.save()
-            return JsonResponse("product updated",safe=False)
+            return JsonResponse(product_serializer.data,safe=False)
         return JsonResponse("not updated",safe=False)
     
 @csrf_exempt    
 def deleteProductById(request,id):
         product = Product.objects.get(id=id)
-        image = product.image 
+        image = Image.objects.get(id=product.image_id)
+        products_serializer=ProductSerializer(product)
         product.delete()  
         image.delete()  
-        return JsonResponse("Deleted", safe=False)
+        return JsonResponse(products_serializer.data, safe=False)
+
 @csrf_exempt 
 def getAllBlogs(request):
         log.info("GET method")
@@ -201,10 +204,7 @@ def getBlogById(request,id):
 def saveBlog(request): 
         blog_data = JSONParser().parse(request)
         blog_serializer=BlogSerializer(data=blog_data)
-        log.info("above the saveBlog")
-        log.info(blog_serializer)
         if blog_serializer.is_valid():
-            log.info("saveBlog is executed")
             blog_serializer.save()
             return JsonResponse("Saved successfully...",safe=False)
         return JsonResponse(blog_serializer.error_messages,safe=False)
@@ -225,6 +225,7 @@ def deleteBlog(request, id):
         blog.delete()  
         image.delete() 
         return JsonResponse("deleted successfully",safe=False)
+
 
 @api_view(['PATCH'])
 def status(request, id):
@@ -250,4 +251,3 @@ def status(request, id):
         return Response(serializer.data)
     except Exception as e:
         return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
