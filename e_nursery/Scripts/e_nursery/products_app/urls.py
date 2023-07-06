@@ -33,6 +33,7 @@ urlpatterns = [
     path('saveblog/',views.saveBlog),
     path('updateblog/',views.updateBlog),
     path('deleteblog/<int:id>/',views.deleteBlog),
+    path('updatestatus/<int:id>/',views.status)
 
 ]
 
