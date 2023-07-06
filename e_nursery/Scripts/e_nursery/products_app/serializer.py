@@ -74,16 +74,10 @@ class ProductSerializer(serializers.ModelSerializer):
         return product
     
     def update(self, instance, validated_data):
-        image_data = validated_data.pop('image', None)
+        #image_data = validated_data.pop('image', None)
         type_data = validated_data.pop('type', None)
 
-        if image_data:
-            image_serializer = ImageSerializer(instance.image, data=image_data)
-            if image_serializer.is_valid():
-                image_serializer.save()
-            else:
-                raise serializers.ValidationError(image_serializer.errors)
-
+        #
         # if type_data:
         #     type_serializer = TypeSerializer(instance.type, data=type_data)
         #     if type_serializer.is_valid():
@@ -97,6 +91,7 @@ class ProductSerializer(serializers.ModelSerializer):
         instance.price = validated_data.get('price', instance.price)
         instance.discount = validated_data.get('discount', instance.discount)
         instance.quantity = validated_data.get('quantity', instance.quantity)
+        instance.image_id = validated_data.get('image_id', instance.image_id)
         instance.save()
 
         return instance
@@ -104,16 +99,20 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class BlogSerializer(serializers.ModelSerializer):
 
-    # image = ImageSerializer(read_only=False)
+    image = ImageSerializer(read_only=False)
 
     class Meta:
         model = Blog
         fields = '__all__'
 
     def create(self, validated_data):
-        # image_data = validated_data.pop('image')
-        # image = Image.objects.create(**image_data)
-        blog = Blog.objects.create( **validated_data)
+        image_data = validated_data.pop('image')
+        
+     
+        image = Image.objects.create(**image_data)
+     
+
+        blog = Blog.objects.create(image=image,  **validated_data)
         return blog
     
     def update(self, instance, validated_data):
