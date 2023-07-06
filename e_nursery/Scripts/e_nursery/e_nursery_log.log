@@ -1,3 +1,20 @@
+2023-07-04 15:41:54,116 - DEBUG - STREAM b'IHDR' 16 13
+2023-07-04 15:41:54,116 - DEBUG - STREAM b'sRGB' 41 1
+2023-07-04 15:41:54,116 - DEBUG - STREAM b'gAMA' 54 4
+2023-07-04 15:41:54,117 - DEBUG - STREAM b'IDAT' 70 65466
+2023-07-04 15:41:54,190 - ERROR - Internal Server Error: /products/saveImage/
+Traceback (most recent call last):
+  File "D:\E Nursery Project\e-nursery-django\e_nursery\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\E Nursery Project\e-nursery-django\e_nursery\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\E Nursery Project\e-nursery-django\e_nursery\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\E Nursery Project\e-nursery-django\e_nursery\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\E Nursery Project\e-nursery-django\e_nursery\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'image' in 'field list'")
 
 The above exception was the direct cause of the following exception:
 
@@ -1115,6 +1132,36 @@ Traceback (most recent call last):
 django.db.utils.OperationalError: (1054, "Unknown column 'product.image_id_id' in 'field list'")
 2023-07-04 17:35:23,758 - INFO - Starts
 2023-07-04 17:35:23,758 - INFO - Serialized
+
+2023-07-05 14:15:11,131 - INFO - Starts
+2023-07-05 14:15:11,131 - INFO - Serialized
+2023-07-05 14:18:08,048 - INFO - login_customer function started
+2023-07-05 14:18:08,093 - INFO - Email exists**********************************************
+2023-07-05 14:18:08,093 - ERROR - TWFoZXNoQDEyMw==
+2023-07-05 14:18:08,093 - ERROR - pbkdf2_sha256$600000$jM40JQldi7ROh8v4VvzFBp$1ZCzZCGqnEZlid6FY3w15yeeZhYHCJHQONhWDnkJ5gg=
+2023-07-05 14:18:09,006 - INFO - Password is correct
+2023-07-05 17:56:57,097 - INFO - login_customer function started
+2023-07-05 17:56:57,210 - INFO - Email exists**********************************************
+2023-07-05 17:56:57,210 - ERROR - TWFoZXNoQDEyMw==
+2023-07-05 17:56:57,210 - ERROR - pbkdf2_sha256$600000$1pkTREgl3lwMrA70v4CyR2$cS/+Zzef2jhVxz5Zpmic2u+KpkW004qeydXwRn50MDM=
+2023-07-05 17:56:57,999 - INFO - Password is incorrect
+2023-07-06 09:36:36,752 - INFO - Starts
+2023-07-06 09:36:36,753 - INFO - Serialized
+2023-07-06 09:39:38,194 - INFO - login_customer function started
+2023-07-06 09:39:38,250 - INFO - Email exists**********************************************
+2023-07-06 09:39:38,250 - ERROR - TWFoZXNoQDEyMw==
+2023-07-06 09:39:38,250 - ERROR - pbkdf2_sha256$600000$1pkTREgl3lwMrA70v4CyR2$cS/+Zzef2jhVxz5Zpmic2u+KpkW004qeydXwRn50MDM=
+2023-07-06 09:39:39,121 - INFO - Password is incorrect
+2023-07-06 09:40:14,844 - INFO - login_customer function started
+2023-07-06 09:40:14,885 - INFO - Email exists**********************************************
+2023-07-06 09:40:14,885 - ERROR - TWFoaUAxMjM=
+2023-07-06 09:40:14,885 - ERROR - pbkdf2_sha256$600000$1pkTREgl3lwMrA70v4CyR2$cS/+Zzef2jhVxz5Zpmic2u+KpkW004qeydXwRn50MDM=
+2023-07-06 09:40:15,666 - INFO - Password is correct
+2023-07-06 09:40:33,286 - INFO - suresh143@gmail.com
+2023-07-06 09:40:33,286 - INFO - {'id': 3, 'first_name': 'suresh', 'last_name': 'kuruva', 'email': 'suresh123@gmail.com', 'password': 'dW5kZWZpbmVk', 'confirmPassword': 'dW5kZWZpbmVk', 'role': 'ADMIN', 'status': 'Active'}
+2023-07-06 09:40:36,295 - INFO - Enter into insert Schedule
+2023-07-06 09:40:38,098 - INFO - Enter into insert Schedule
+=======
 2023-07-04 17:53:33,264 - INFO - Starts
 2023-07-04 17:53:33,265 - INFO - Serialized
 2023-07-04 17:53:42,537 - INFO - Starts
@@ -7377,6 +7424,7 @@ AttributeError: 'function' object has no attribute 'HTTP_400_BAD_REQUEST'
 2023-07-06 14:12:37,327 - ERROR - +++++++++++++++++++
 2023-07-06 14:12:37,335 - INFO - Image object (8)
 2023-07-06 14:12:37,335 - ERROR - +++++++++++++++++++
+
 
 2023-07-05 22:27:16,222 - INFO - Image object (8)
 2023-07-05 22:27:16,222 - ERROR - +++++++++++++++++++
@@ -13815,4 +13863,3 @@ AttributeError: 'function' object has no attribute 'HTTP_400_BAD_REQUEST'
 2023-07-06 13:28:17,681 - ERROR - +++++++++++++++++++
 2023-07-06 13:28:17,682 - INFO - Image object (28)
 2023-07-06 13:28:17,682 - INFO - getting all images
-
