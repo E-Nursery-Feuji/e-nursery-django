@@ -11,6 +11,8 @@ from django.core.serializers import serialize
 from django.http import JsonResponse
 from rest_framework import viewsets
 from .models import Image
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 # Create your views here.
 
@@ -199,7 +201,10 @@ def getBlogById(request,id):
 def saveBlog(request): 
         blog_data = JSONParser().parse(request)
         blog_serializer=BlogSerializer(data=blog_data)
+        log.info("above the saveBlog")
+        log.info(blog_serializer)
         if blog_serializer.is_valid():
+            log.info("saveBlog is executed")
             blog_serializer.save()
             return JsonResponse("Saved successfully...",safe=False)
         return JsonResponse(blog_serializer.error_messages,safe=False)
@@ -220,3 +225,29 @@ def deleteBlog(request, id):
         blog.delete()  
         image.delete() 
         return JsonResponse("deleted successfully",safe=False)
+
+@api_view(['PATCH'])
+def status(request, id):
+    log.info("Enter into insert Schedule")
+    try:
+        schedule = Blog.objects.get(id=id)
+    except Blog.DoesNotExist:
+        return Response({'error': 'Schedule not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Assign the field value "InActive" to the desired field
+
+    if (schedule.status == "Active"):
+        schedule.status = "InActive"
+    elif (schedule.status == "InActive"):
+        schedule.status = "Active"
+    else:
+        schedule.status = "InActive"
+
+                        
+    try:                   # Save the updated Schedule object
+        schedule.save()    # Return the serialized data in the response
+        serializer = BlogSerializer(schedule)
+        return Response(serializer.data)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+

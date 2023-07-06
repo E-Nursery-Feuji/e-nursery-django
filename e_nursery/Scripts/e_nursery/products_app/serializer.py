@@ -104,20 +104,16 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class BlogSerializer(serializers.ModelSerializer):
 
-    image = ImageSerializer(read_only=False)
+    # image = ImageSerializer(read_only=False)
 
     class Meta:
         model = Blog
         fields = '__all__'
 
     def create(self, validated_data):
-        image_data = validated_data.pop('image')
-        
-     
-        image = Image.objects.create(**image_data)
-     
-
-        blog = Blog.objects.create(image=image,  **validated_data)
+        # image_data = validated_data.pop('image')
+        # image = Image.objects.create(**image_data)
+        blog = Blog.objects.create( **validated_data)
         return blog
     
     def update(self, instance, validated_data):
