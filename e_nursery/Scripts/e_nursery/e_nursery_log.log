@@ -1132,3 +1132,31 @@ Traceback (most recent call last):
 django.db.utils.OperationalError: (1054, "Unknown column 'product.image_id_id' in 'field list'")
 2023-07-04 17:35:23,758 - INFO - Starts
 2023-07-04 17:35:23,758 - INFO - Serialized
+2023-07-05 14:15:11,131 - INFO - Starts
+2023-07-05 14:15:11,131 - INFO - Serialized
+2023-07-05 14:18:08,048 - INFO - login_customer function started
+2023-07-05 14:18:08,093 - INFO - Email exists**********************************************
+2023-07-05 14:18:08,093 - ERROR - TWFoZXNoQDEyMw==
+2023-07-05 14:18:08,093 - ERROR - pbkdf2_sha256$600000$jM40JQldi7ROh8v4VvzFBp$1ZCzZCGqnEZlid6FY3w15yeeZhYHCJHQONhWDnkJ5gg=
+2023-07-05 14:18:09,006 - INFO - Password is correct
+2023-07-05 17:56:57,097 - INFO - login_customer function started
+2023-07-05 17:56:57,210 - INFO - Email exists**********************************************
+2023-07-05 17:56:57,210 - ERROR - TWFoZXNoQDEyMw==
+2023-07-05 17:56:57,210 - ERROR - pbkdf2_sha256$600000$1pkTREgl3lwMrA70v4CyR2$cS/+Zzef2jhVxz5Zpmic2u+KpkW004qeydXwRn50MDM=
+2023-07-05 17:56:57,999 - INFO - Password is incorrect
+2023-07-06 09:36:36,752 - INFO - Starts
+2023-07-06 09:36:36,753 - INFO - Serialized
+2023-07-06 09:39:38,194 - INFO - login_customer function started
+2023-07-06 09:39:38,250 - INFO - Email exists**********************************************
+2023-07-06 09:39:38,250 - ERROR - TWFoZXNoQDEyMw==
+2023-07-06 09:39:38,250 - ERROR - pbkdf2_sha256$600000$1pkTREgl3lwMrA70v4CyR2$cS/+Zzef2jhVxz5Zpmic2u+KpkW004qeydXwRn50MDM=
+2023-07-06 09:39:39,121 - INFO - Password is incorrect
+2023-07-06 09:40:14,844 - INFO - login_customer function started
+2023-07-06 09:40:14,885 - INFO - Email exists**********************************************
+2023-07-06 09:40:14,885 - ERROR - TWFoaUAxMjM=
+2023-07-06 09:40:14,885 - ERROR - pbkdf2_sha256$600000$1pkTREgl3lwMrA70v4CyR2$cS/+Zzef2jhVxz5Zpmic2u+KpkW004qeydXwRn50MDM=
+2023-07-06 09:40:15,666 - INFO - Password is correct
+2023-07-06 09:40:33,286 - INFO - suresh143@gmail.com
+2023-07-06 09:40:33,286 - INFO - {'id': 3, 'first_name': 'suresh', 'last_name': 'kuruva', 'email': 'suresh123@gmail.com', 'password': 'dW5kZWZpbmVk', 'confirmPassword': 'dW5kZWZpbmVk', 'role': 'ADMIN', 'status': 'Active'}
+2023-07-06 09:40:36,295 - INFO - Enter into insert Schedule
+2023-07-06 09:40:38,098 - INFO - Enter into insert Schedule
