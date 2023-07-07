@@ -195,9 +195,7 @@ def updateBlog(request):
 @csrf_exempt
 def deleteBlog(request, id):
         blog=Blog.objects.get(id=id)
-        image = blog.image 
         blog.delete()  
-        image.delete() 
         return JsonResponse("deleted successfully",safe=False)
 
 

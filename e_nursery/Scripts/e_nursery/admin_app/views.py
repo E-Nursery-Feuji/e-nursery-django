@@ -22,7 +22,6 @@ log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime
 def registerAdmin(request):
     log.info("register_admin function started")
     try:  
-   
             serilizer=AdminModelSerializer(data=request.data)  #serializer the admin data
             if serilizer.is_valid():  #checking the validation of serialized data
                 log.info("register_admin:data is valid")
@@ -65,11 +64,9 @@ def getAdmin(request, id=None):
 def update(request, id):
     try:
         admin = Admin.objects.get(id=id)
-        log.info("################################")
         log.info(admin)
         serializer = AdminModelSerializer(admin, data=request.data)
         log.info(serializer)
-        log.info("****************************************")
         admin.id=request.data.get('id')
         admin.first_name=request.data.get('first_name')
         admin.last_name=request.data.get('last_name')
