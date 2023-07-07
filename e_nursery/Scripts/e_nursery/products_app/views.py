@@ -61,33 +61,7 @@ class SaveImage(viewsets.ModelViewSet):
               image=request.data['image']
               return HttpResponse("Submit")
 
-# @csrf_exempt       
-# def saveImage(self,request):
-#         log.info("saveImage : starts")
-#         log.info(request.FILES)
-#         if 'image' in request.FILES: #check the image is present as file or not
-#                 log.info("Image Present in the request")
-#                 return self.create(request)
-#                 # image_file = request.FILES['image'] #get the image from the request
-#                 # log.info("Image is reading...")
-#                 # image_data = image_file.read() #get the image data from the image
-#                 # log.info("Image reading Completed")
-#                 # image = Image() #create the object of the image model
-#                 # # log.info(image_data)
-#                 # image.image_data = image_data #assign the image data in the object
-#                 # log.info(image)
-#                 # image.save() #save the image in database
-#                 # log.info("Image saved")
-#                 # serialized_image = serialize('json', [image])
-#                 # return JsonResponse(serialized_image, safe=False)
-#                 # return HttpResponse(image) #response if image save succesfuuly
-#         log.info("Image is not present in request")
-#         return HttpResponse("Invalid request.") #reponse if image is not there in request
 
-# @csrf_exempt 
-# def saveImage(request):
-#         if request.data:
-               
 
 @csrf_exempt 
 def updateImage(request):
