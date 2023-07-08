@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework_simplejwt.tokens import RefreshToken
+# from rest_framework_simplejwt.tokens import RefreshToken
 from .models import *
 from .serializer import *
 import logging as log
@@ -49,11 +49,33 @@ def login_customer(request):
     email = request.data.get('email')
     password = request.data.get('password')
     user = Users.objects.filter(email=email).first() # Retrieve customer object based on email
+     
+    admin=Admin.objects.filter(email=email).first()
+
     if user:
         log.info("Email exists**********************************************")
         log.error(password)
         log.error(user.password)
-        if check_password(password, user.password): # Verifying password
+        if user.role=="ADMIN":
+            if admin.status=="Active":
+                if check_password(password, user.password): # Verifying password
+                    log.info("Password is correct")
+                            # Generate JWT token
+                    token = generate_jwt_token(user.email,user.role,user.first_name)
+                    # Include the token in the response
+                    response_data = {
+                    'user': UserSerializer(user).data,
+                    'token': token
+                }
+                    return Response(response_data)
+                else:
+                    log.info("Password is incorrect")
+                    return Response("Incorrect Password")  
+            else:
+                return Response("status inactive")
+               
+        else:    
+         if check_password(password, user.password): # Verifying password
             log.info("Password is correct")
             # Generate JWT token
             token = generate_jwt_token(user.email,user.role,user.first_name)
@@ -63,7 +85,7 @@ def login_customer(request):
                 'token': token
             }
             return Response(response_data)
-        else:
+         else:
             log.info("Password is incorrect")
             return Response("Incorrect Password")
     else:
