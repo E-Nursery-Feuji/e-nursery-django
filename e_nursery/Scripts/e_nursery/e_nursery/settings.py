@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'rest_framework',  #provide python restful api services
     'admin_app.apps.AdminAppConfig',
     'customer_app.apps.CustomerAppConfig',
-    'authentication_app.apps.AuthenticationAppConfig',
     'orders_app.apps.OrdersAppConfig',
     'products_app.apps.ProductsAppConfig',
    
