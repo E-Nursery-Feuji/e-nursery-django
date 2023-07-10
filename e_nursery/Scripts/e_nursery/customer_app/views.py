@@ -13,6 +13,7 @@ from django.contrib.auth.hashers import check_password
 from django.conf import settings
 from .email import *
 from admin_app.models import Admin
+from django.http import JsonResponse
 
 #for the log level & file & formate
 log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -124,20 +125,6 @@ def forgot_password(request):
     else:
         log.info("Email is not exist")
         return Response("Email invalid") #reponse if email is not present
-    
-# @api_view(['POST'])
-# def update_password(request):
-#     log.info("update_password:starts")
-#     email=request.data.get('email') #get email from the request
-#     password=request.data.get('password') #get password form request
-#     customer=Customer.objects.filter(email=email).first() #get the user based on email
-#     customer.set_password(password) #password encodes
-#     log.info("Encoded password saved")
-#     h=customer.save() #updtae the customer
-#     log.info(h)
-#     log.info("Password changed")
-#     return Response("Success") #reponse if password chnaged
-    
 
 
 
@@ -165,7 +152,25 @@ def update_password(request):
     log.info("Password changed")
     return Response("Success") #reponse if password chnaged   
 
-        
+
+#for getting single user based on email
+@api_view(['GET'])
+def get_customer_by_EMail(request,email):
+    log.info("get_customer_by_EMail start",email)
+    #find the customer from db
+    try:
+        customer=Customer.objects.get(email=email)
+        log.info("get_customer_by_EMail try block customer object",customer)
+        serializers = CustomerSerializer(customer)
+        data={
+           'customer':serializers.data
+        }
+        log.info("get_customer_by_EMail try block json data",data)
+        return JsonResponse(data)
+    except Customer.DoesNotExist:
+        raise Exception("Customer does not exist")
+    except Exception:
+        raise Exception("Something went wrong") 
 
 
 

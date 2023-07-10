@@ -9,5 +9,6 @@ urlpatterns = [
     path('save/',register_customer,name='register_customer'),
     path('signin/',login_customer,name='login_customer'),
     path('forgotpasswordotp/',forgot_password,name='forgot_password'),
-    path('updatepassword/',update_password,name='update_password')
+    path('updatepassword/',update_password,name='update_password'),
+    path('customerbyemail/<str:email>/', get_customer_by_EMail, name='get_customer_by_EMail')
 ]
