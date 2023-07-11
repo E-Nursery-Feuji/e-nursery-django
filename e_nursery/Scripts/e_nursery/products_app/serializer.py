@@ -16,9 +16,6 @@ class ImageSerializer(serializers.ModelSerializer):
         fields=['id','image','image_url']
     
     def get_image_url(self, obj):
-        log.error("+++++++++++++++++++")
-        log.info(obj)
-
         if obj.image:
             image_path = smart_str(obj.image)
             return self.context['request'].build_absolute_uri(settings.MEDIA_URL + image_path)
