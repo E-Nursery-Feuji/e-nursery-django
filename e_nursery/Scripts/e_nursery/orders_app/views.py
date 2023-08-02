@@ -6,6 +6,7 @@ from .serializer import *
 from django.forms.models import model_to_dict
 from django.http import JsonResponse
 from django.core.exceptions import *
+from django.http import Http404
 
 #for the log level & file & formate
 log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -15,7 +16,7 @@ log.basicConfig(filename='e_nursery_log.log', level=log.DEBUG, format='%(asctime
 
 
 #for save the cart with customer.product,quantity
-@api_view(['POST','PUT'])
+@api_view(['POST', 'PUT'])
 def createCart(request):
     log.info("createCart method start")
     log.info(request.data)
@@ -26,20 +27,31 @@ def createCart(request):
         elif request.method == 'PUT':
             log.info("Call Put method")
             cart_id = request.data.get('id')
-            cart_instance = Cart.objects.get(id=cart_id)
-            serializer=CartSerializer(cart_instance,data=request.data)
+            try:
+                cart_instance = Cart.objects.get(id=cart_id)
+            except Cart.DoesNotExist:
+                raise Http404("Cart does not exist")  # Handle cart not found gracefully
+            serializer = CartSerializer(cart_instance, data=request.data)
+
         log.info("Data serialized")
         if serializer.is_valid():
             log.info("data is valid")
-            serializer.save()
-            log.info("Data saved")
-            return Response(serializer.data)
+            if request.data.get('quantity') == 0:
+                log.info("cart quantity is 0")
+                cart_instance.delete()
+                return Response()  # Return an empty response after deleting the cart
+            else:
+                serializer.save()
+                log.info("Data saved")
+                return Response(serializer.data)
         else:
             log.info("Data is not valid")
             return Response(serializer.errors)
     except Exception as e:
         log.error("Enter in except block")
         raise Exception("Something went wrong in createCart method")
+
+
 
 #get cart by the customer id
 @api_view(['GET'])

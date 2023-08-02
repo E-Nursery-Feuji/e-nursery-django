@@ -50,6 +50,8 @@ def login_customer(request):
     email = request.data.get('email')
     password = request.data.get('password')
     user = Users.objects.filter(email=email).first() # Retrieve customer object based on email
+    log.info("user")
+    log.info(user)
      
     admin=Admin.objects.filter(email=email).first()
 
@@ -75,28 +77,32 @@ def login_customer(request):
             else:
                 return Response("status inactive")
                
-        else:    
-         if check_password(password, user.password): # Verifying password
-            log.info("Password is correct")
-            # Generate JWT token
-            token = generate_jwt_token(user.email,user.role,user.first_name)
-            # Include the token in the response
-            response_data = {
-                'user': UserSerializer(user).data,
-                'token': token
-            }
-            return Response(response_data)
-         else:
-            log.info("Password is incorrect")
-            return Response("Incorrect Password")
+        else:
+         if user.role == 'CUSTOMER':   
+            if check_password(password, user.password): # Verifying password
+                log.info("Password is correct")
+                # Generate JWT token
+                log.info(user.id)
+                user = Customer.objects.filter(email=email).first() 
+                token = generate_jwt_token(user.id,user.email,user.role,user.first_name)
+                # Include the token in the response
+                response_data = {
+                    'user': UserSerializer(user).data,
+                    'token': token
+                }
+                return Response(response_data)
+            else:
+                log.info("Password is incorrect")
+                return Response("Incorrect Password")
     else:
         log.info("Email does not exist")
         return Response("Email not found")
     
 #for generating jwt token
-def generate_jwt_token(email,role,first_name):
+def generate_jwt_token(id,email,role,first_name):
     # Define the token payload (claims)
     payload = {
+        'id' : id ,
         'email': email,
         'role':role,
         'first_name':first_name,
